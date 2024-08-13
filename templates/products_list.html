@@ -9,29 +9,50 @@
     </div>
     {% for product_chunks in products|chunks:4  %}
 
-        {% for product in product_chunks %}
     <div class="row">
+        {% for product in product_chunks %}
         <div class="col-4">
-            <a href="{% url 'detail_product' %}"><img src="{% static 'images/product-1.jpg' %}"></a>
-            <h4>{{product.title}}</h4>
+            <a href="{% url 'detail_product' %}"><img src="{{ product.image.url }}"></a>
+            <h4>{{product.title | capfirst }}</h4>
+
+            <!-- Ratings -->
             <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
+                <!-- Loop to display filled stars -->
+                {% for _ in product.filled_stars %}
+                    <i class="fa fa-star"></i>
+                {% endfor %}
+            
+                <!-- Loop to display empty stars -->
+                {% for _ in product.empty_stars %}
+                    <i class="fa fa-star-o"></i>
+                {% endfor %}
             </div>
+
             <p>${{product.price}}.00</p>
-        {% endfor %}
         </div>
+        {% endfor %}
     </div>
     {% endfor %}
 
     <div class="page-btn">
-        <span>1</span>
-        <span>2</span>
-        <span>3</span>
-        <span>4</span>
-        <span>&#8594;</span>
+        
+        {% if products.has_previous %}
+        <!-- Left Arrow -->
+            <a href="?page={{ products.previous_page_number }}"><span>&#8592;</span></a>
+        {% endif %}
+
+        {% for i in products.paginator.page_range %}
+            <a href="?page={{i}}"><span>{{i}}</span></a>
+        {% endfor %}
+
+        {% if products.has_next %}
+        <!-- Right Arrow -->
+        <a href="?page={{ products.next_page_number }}"><span>&#8594;</span></a>
+        {% endif %}
+        
     </div>
 </div>
+
+
+
+
