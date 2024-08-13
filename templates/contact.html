@@ -11,8 +11,7 @@
             <h1>Contact Us</h1>
             <p>If you have any questions, comments, or just want to say hello, we'd love to hear from you! Please fill out the form below, and we'll get back to you as soon as possible.</p>
             
-            {% comment %} <form action="{% url 'contact_form_submission' %}" method="POST"> {% endcomment %}
-            <form method="POST">
+            <form action="{% url 'contact_form_submission' %}" method="POST">
                 {% csrf_token %}
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
