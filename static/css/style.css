@@ -321,7 +321,7 @@ input:focus{
 }
 .small-img-row{
     display: flex;
-    justify-content: space-between;
+
 }
 .small-img-col{
     flex-basis: 24%;

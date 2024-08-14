@@ -20,6 +20,12 @@ class Product(models.Model):
     price = models.FloatField()
     description = models.TextField()
     image = models.ImageField(upload_to='media/')
+
+    image1 = models.ImageField(upload_to='media/', null=True, blank=True)
+    image2 = models.ImageField(upload_to='media/', null=True, blank=True)
+    image3 = models.ImageField(upload_to='media/', null=True, blank=True)
+
+
     rating = models.IntegerField(default=1)
     priority = models.IntegerField(default=0)
     
