@@ -7,12 +7,24 @@ class Product(models.Model):
     DELETE = 0
     DELETE_CHOICES = ((LIVE, 'Live'), (DELETE, 'Delete'))
 
+    # Define category choices directly
+    CATEGORY_CHOICES = (
+        ('cloth', 'Cloth'),
+        ('watch', 'Watch'),
+        ('footwear', 'Footwear'),
+        ('electronics', 'Electronics'),
+        ('bags', 'Bags'),
+    )
+
     title = models.CharField(max_length=200)
     price = models.FloatField()
     description = models.TextField()
     image = models.ImageField(upload_to='media/')
     rating = models.IntegerField(default=1)
     priority = models.IntegerField(default=0)
+    
+    # Add categories field
+    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES,default='', blank=True)
 
     delete_status = models.IntegerField(choices=DELETE_CHOICES, default=LIVE)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -20,6 +32,9 @@ class Product(models.Model):
     
     def __str__(self) -> str:
         return self.title
+
+
+
 
 
 
