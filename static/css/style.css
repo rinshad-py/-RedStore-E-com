@@ -385,17 +385,47 @@ th:last-child{
     padding: 50px 0;
     background: radial-gradient(#fff, #ffd6d6);
 }
+
+.message-container{
+        /* background: #fff; */
+        width: 300px;
+        height: fit-content;
+        position: relative;
+        text-align: center;
+        /* padding: 20px 0; */
+        margin: auto;
+        /* box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1); */
+        overflow: hidden;
+}
+
+.messages {
+    list-style-type: none;
+    padding: 0;
+}
+
+.messages .success {
+    color: green;
+}
+
+.messages .error {
+    color: red;
+}
+
+
 .form-container{
     background: #fff;
     width: 300px;
-    height: 400px;
+    height: 430px;
     position: relative;
     text-align: center;
     padding: 20px 0;
     margin: auto;
     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    border-radius: 15px;
 }
+
+
 .form-container span{
     font-weight: bold;
     padding: 0 10px;
@@ -411,7 +441,7 @@ th:last-child{
     max-width: 300px;
     padding: 0 20px;
     position: absolute;
-    top: 130px;
+    top: 90px;
     transition: transform 1s;
 }
 form input{
@@ -499,6 +529,7 @@ form a{
         display: none;
     }
 }
+
 
 
 /* contact html styling */

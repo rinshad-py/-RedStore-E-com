@@ -1,0 +1,81 @@
+{% extends "blank_layout.html" %}
+{% load static %}
+
+{% block content %}
+<div class="account-details-container">
+    {% csrf_token %}
+    <h2>Account Details</h2>
+    <div class="details-box">
+        <p><strong>Name:</strong> {{ user.username }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Phone:</strong> {{ customer.phone }}</p>
+        <p><strong>Address:</strong> {{ customer.address }}</p>
+    </div>
+    <div class="button-container">
+        <a href="{% url 'logout' %}" class="btn btn-logout">Logout</a>
+        <a href="" class="btn btn-edit">Edit Details</a>
+    </div>
+</div>
+
+
+<style>
+    .account-details-container {
+        max-width: 800px;
+        margin: 40px auto;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: left;
+    }
+
+    .details-box {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    .details-box p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-logout {
+        background-color: #ff4b4b;
+    }
+
+    .btn-edit {
+        background-color: #4caf50;
+    }
+
+    .btn-logout:hover {
+        background-color: #ff1a1a;
+    }
+
+    .btn-edit:hover {
+        background-color: #45a049;
+    }
+</style>
+
+
+
+{% endblock content %}
+
+
