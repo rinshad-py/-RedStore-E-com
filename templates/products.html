@@ -3,5 +3,37 @@
 
 
 {% block content %}
+    {% if messages %}
+        <div id="popup-message" class="popup hidden">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
     {% include "products_list.html" %}
+
+
+<script>    
+    document.addEventListener('DOMContentLoaded', function () {
+        const popup = document.getElementById('popup-message');
+        
+        if (popup) {
+            // Show the popup
+            popup.classList.remove('hidden');
+            popup.classList.add('show');
+    
+            // Hide the popup after 3 seconds
+            setTimeout(function() {
+                popup.classList.remove('show');
+                // Use setTimeout to add delay before setting display to none
+                setTimeout(function() {
+                    popup.classList.add('hidden');
+                }, 500); // Matches the transition duration
+            }, 3000);
+        }
+    });
+    
+</script>
+    
 {% endblock content %}

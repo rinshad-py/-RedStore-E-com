@@ -11,7 +11,8 @@
                 <li><a href="{% url 'list_product' %}">Products</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
                 <li><a href="{% url 'contact_form_submission' %}">Contact</a></li>
-                <li><a href="{% url 'account_details' %}">{{user.username}}</a></li>
+                <li><a href="{% url 'orders' %}">My Orders</a></li>
+                <li><a href="{% url 'account_details' %}">{{user.username | capfirst}}</a></li>
             </ul>
         </nav>
         <a href="{% url 'cart' %}"><img src="{% static 'images/cart.png' %}" width="30px" height="30px"></a>

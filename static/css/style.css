@@ -330,7 +330,7 @@ input:focus{
 
 /* Cart Items */
 .cart-page{
-    margin: 80px auto;
+    margin: 60px auto;
 }
 table{
     width: 100%;
@@ -357,7 +357,7 @@ td input{
 }
 td a{
     color: #ff523b;
-    font-size: 12px;
+    font-size: 15px;
 }
 td img{
     width: 80px;
@@ -452,7 +452,7 @@ form input{
     border: 1px solid #ccc;
 }
 form .btn{
-    width: 100%;
+    width: fit-content;
     border: none;
     cursor: pointer;
     margin: 10px 0;
@@ -530,7 +530,104 @@ form a{
     }
 }
 
+.empty-cart-message {
+    font-size: 1.5em; /* Increase the font size */
+    color: #ff4d4d; /* Make the text red */
+    text-align: center; /* Center the text */
+    padding: 120px; /* Add some padding for space around the text */
+    background-color: #f9f9f9; /* Light grey background */
+    border: 2px dashed #ff4d4d; /* Dashed border to match the text color */
+    border-radius: 10px; /* Rounded corners */
+    /* margin-top: 40px; Space from the top */
+    /* margin-bottom: 40px; */
+    margin: 40px 40px 40px 40px;
+}
 
+.cart-success-message {
+    font-size: 1.5em; /* Increase the font size */
+    color: #ff4d4d; /* Make the text red */
+    text-align: center; /* Center the text */
+    padding: 120px; /* Add some padding for space around the text */
+    background-color: #f9f9f9; /* Light grey background */
+    border-radius: 10px; /* Rounded corners */
+    /* margin-top: 40px; Space from the top */
+    /* margin-bottom: 40px; */
+    margin: 40px 40px 40px 40px;
+}
 
 /* contact html styling */
+
+
+/* my orders.css */
+
+.orders-container {
+    max-width: 1250px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.orders-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.orders-table th, .orders-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.orders-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.orders-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.orders-table td {
+    color: #555;
+}
+
+.orders-table td:first-child {
+    font-weight: bold;
+}
+
+/* my orders.css */
+
+/* Popup styling */
+.popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    background-color: #28a745; /* Green background */
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+}
+
+.popup.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.popup.hidden {
+    display: none;
+}
+
 

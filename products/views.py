@@ -48,7 +48,6 @@ def list_products(request):
 def detail_product(request, pk):
     product = Product.objects.get(pk=pk)
 
-
     return render(request, 'product_detail.html',{'product': product} )
 
 

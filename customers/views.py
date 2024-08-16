@@ -30,7 +30,7 @@ def account(request):
         user = User.objects.create_user( username=username, password=password, email=email )
 
         # Creates customer account
-        customer = Customer.objects.create( user=user, phone=phone, address=address )
+        customer = Customer.objects.create(name=username, user=user, phone=phone, address=address )
 
         messages.success(request, 'Account created successfully.')
         context['register'] = False  # Switch to login form after successful registration
