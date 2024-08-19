@@ -46,11 +46,14 @@ def list_products(request):
 
 
 def detail_product(request, pk):
+    related_product = Product.objects.order_by('-id')[:4]
+    # Add filled and empty stars to each featured product
+    for product in related_product:
+        product.filled_stars = range(product.rating)
+        product.empty_stars = range(5 - product.rating)
+
     product = Product.objects.get(pk=pk)
 
-    return render(request, 'product_detail.html',{'product': product} )
+    return render(request, 'product_detail.html',{'product': product, 'related_product': related_product} )
 
 
-
-def contact(request):
-    return render(request, 'contact.html')

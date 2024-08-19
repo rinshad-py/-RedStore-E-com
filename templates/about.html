@@ -5,13 +5,19 @@
 <div class="about-container">
     <div class="row">
         <div class="col-2">
-            <img src="{% static 'images/Cbe12Pro.jpg' %}" alt="About Us Image">
+            <img src="{% static 'images/TsrPotrait_croped.jpg' %}" alt="About Us Image">
+            <!-- Social Media Icons -->
+            <ul class="social-icons">
+                <li><a href="https://www.instagram.com/rin_ju_?igsh=bmNlN2V2bW40Y2h3"><span class="fa fa-instagram" aria-hidden="true"></span></a></li>
+                <li><a href="https://github.com/rinshad-py"><span class="fa fa-github" aria-hidden="true"></span></a></li>
+                <li><a href="https://www.facebook.com/rinshad.rinju.37/"><span class="fa fa-facebook" aria-hidden="true"></span></a></li>
+                <li><a href="https://www.linkedin.com/in/rinshad-a-a29687279?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><span class="fa fa-linkedin-square" aria-hidden="true"></span></a></li>
+                <li><a href="https://wa.me/919809331970?text=I checked out your RedStore and thought it was great⭐. 'YourName'"><span class="fa fa-whatsapp" aria-hidden="true"></span></a></li>
+            </ul>
         </div>
         <div class="col-2">
             <h1>About Us</h1>
             <p>Welcome to RedStore, your number one source for all things Fashion & Apparel. We're dedicated to giving you the very best of Fashion & Apparel, with a focus on quality, customer service, and uniqueness.</p>
-            <p>Founded in 2024 by Rinshad, RedStore has come a long way from its beginnings in Canada. When Rinshad first started out, their passion for Fashion drove them to do tons of research so that RedStore can offer you Exclusive, handcrafted items from global artisans. We now serve customers all over the world , and are thrilled that we're able to turn our passion into our own website.</p>
-            <p>We hope you enjoy our products as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.</p>
             <h2>Our Mission</h2>
             <p>Our mission is to provide the best Fashion & Apparel to our customers, ensuring top-notch quality and a seamless shopping experience.</p>
             <h2>Our Values</h2>
@@ -22,7 +28,7 @@
                 <li><strong>Innovation:</strong> We constantly seek to improve and innovate our offerings.</li>
             </ul>
             <p>Thank you for being part of our story!</p>
-            <a href="{% url 'contact' %}" class="btn">Contact Us</a>
+            <a href="{% url 'contact_form_submission' %}" class="btn">Contact Us</a>
         </div>
     </div>
 </div>
@@ -47,6 +53,40 @@
         max-width: 500px;
         border-radius: 10px;
         margin-bottom: 20px;
+    }
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .social-icons li {
+        list-style: none;
+        margin: 0 10px;
+    }
+    .social-icons li a {
+        color: #333;
+        font-size: 24px;
+        transition: color 0.3s ease;
+    }
+    .social-icons li a:hover {
+        color: #ff523b;
+    }
+    .resume-dnld {
+        display: block;
+        background-color: #ff523b;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        border-radius: 5px;
+        text-align: center;
+        margin: auto;
+        max-width: 200px;
+        transition: background-color 0.3s ease;
+    }
+    .resume-dnld:hover {
+        background-color: #ff653b;
     }
     .about-container h1 {
         font-size: 36px;
