@@ -16,11 +16,7 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-import environ
 
-env = environ.Env()
-
-environ.Env.read_env()
 
 
 
@@ -32,7 +28,7 @@ environ.Env.read_env()
 SECRET_KEY = 'django-insecure--(jtn12^txvrq6#dxln*-&$z_job4e@q@jtjrunci0ika5mi)!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -88,28 +84,16 @@ WSGI_APPLICATION = 'carbow.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-'''
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-'''
 
-# Render PostgreSQL Database (Live)
-import environ
-import dj_database_url
 
-env = environ.Env()
-environ.Env.read_env()
 
-# Print the DATABASE_URL to verify it's being read
-print("DATABASE_URL:", env('DATABASE_URL'))
-
-DATABASES = {
-    'default': dj_database_url.parse(env('DATABASE_URL'))
-}
 
 
 
